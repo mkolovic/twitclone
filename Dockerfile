@@ -2,7 +2,7 @@ FROM node:7.2.1
 MAINTAINER Mladen Kolovic <mkolovic@uwaterloo.ca>
 
 EXPOSE 8080
-ENV APP /opt/twitclone/
+ENV APP /opt/twitclone
 
 RUN mkdir -p $APP
 WORKDIR $APP
@@ -13,6 +13,7 @@ COPY package.json $APP
 RUN npm install 
 
 COPY app.js $APP
+COPY views/ $APP/views
 
 
 CMD ["node", "app.js"]
