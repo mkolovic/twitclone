@@ -8,6 +8,7 @@ var app = express();
 // configure the express app
 app.set('view engine', 'ejs');
 app.set('views', './views');
+app.use(express.static('public'));
 
 // apps have routes
 // get method has a request and response 

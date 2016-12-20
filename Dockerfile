@@ -14,6 +14,7 @@ RUN npm install
 
 COPY app.js $APP
 COPY views/ $APP/views
+COPY public/ $APP/public
 
 
 CMD ["node", "app.js"]
