@@ -1,0 +1,28 @@
+{
+  "name": "twitclone",
+  "version": "1.0.0",
+  "description": "Twitter Clone Course from Spark School",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkolovic/twitclone.git"
+  },
+  "keywords": [
+    "web",
+    "dev",
+    "twitter",
+    "clone"
+  ],
+  "author": "Mladen Kolovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkolovic/twitclone/issues"
+  },
+  "homepage": "https://github.com/mkolovic/twitclone#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
