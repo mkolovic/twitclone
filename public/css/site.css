@@ -47,6 +47,16 @@ main {
     width: 100%;
 }
 
+#tweet-form-button {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 7px 8px;
+    background-color: #1b95e0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
