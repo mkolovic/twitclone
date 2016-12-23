@@ -1,0 +1,33 @@
+version: '2'
+services:
+    app:
+        extends:
+            file: 'basic.yml'
+            service: app
+        container_name: 'twitclone-dev-app'
+        command: 'nodemon -V dev/server.js'
+        depends_on:
+            - db
+        volumes:
+            - './app:/opt/twitclone/dev/'
+    db:
+        extends:
+            file: 'basic.yml'
+            service: db
+        container_name: 'twitclone-dev-db'
+        environment:
+            MYSQL_DATABASE: twitclonedb
+            MYSQL_ROOT_PASSWORD: secret
+        volumes:
+            - 'twit-dev-db:/var/lib/mysql'
+    dbadmin:
+        image: 'phpmyadmin/phpmyadmin:4.6'
+        container_name: 'twitclone-db-admin'
+        depends_on:
+            - db
+        environment:
+            PMA_HOST: 'twitclone-dev-db'
+        ports:
+            - "80:80"
+volumes:
+    twit-dev-db:

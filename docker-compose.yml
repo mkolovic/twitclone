@@ -1,6 +1,21 @@
 version: '2'
 services:
-  twitclone:
-    build: .
-    ports:
-     - "8080:8080"
+    app:
+        extends:
+            file: 'basic.yml'
+            service: app
+        container_name: 'twitclone-app'
+        depends_on:
+            - db
+    db:
+        extends:
+            file: 'basic.yml'
+            service: db
+        container_name: 'twitclone-db'
+        environment:
+            MYSQL_DATABASE: twitclonedb
+            MYSQL_ROOT_PASSWORD: secret
+        volumes:
+            - 'twit-db:/var/lib/mysql'
+volumes:
+    twit-db:

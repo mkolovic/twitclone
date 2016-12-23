@@ -10,11 +10,9 @@ WORKDIR $APP
 # use changes to package.json to force Docker not to use the cache
 # when we change our application's nodejs dependencies:
 COPY package.json $APP
-RUN npm install 
+RUN npm install && npm install --global nodemon
 
-COPY app.js $APP
-COPY views/ $APP/views
-COPY public/ $APP/public
+COPY app/ $APP
 
 
-CMD ["node", "app.js"]
+CMD ["node", "server.js"]
