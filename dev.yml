@@ -5,7 +5,7 @@ services:
             file: 'basic.yml'
             service: app
         container_name: 'twitclone-dev-app'
-        command: 'nodemon -V dev/server.js'
+        command: 'bash -c "cd dev && nodemon -V server.js"'
         depends_on:
             - db
         volumes:
