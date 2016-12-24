@@ -61,6 +61,17 @@ main {
     cursor: pointer;
 }
 
+#tweet-form-delete-button {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 7px 8px;
+    background-color: #e53334;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
 .tweet {
     padding: 10px 12px;
     border-top: 1px solid #e1e8ed;
