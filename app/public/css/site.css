@@ -24,6 +24,10 @@ main {
     border-radius: 6px;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 #tweet-form {
     padding: 10px 12px 10px 12px;
     background-color: #e8f4fb;
@@ -57,7 +61,11 @@ main {
     cursor: pointer;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+.tweet {
+    padding: 10px 12px;
+    border-top: 1px solid #e1e8ed;
 }
 
+.light-grey {
+    color: #8899a6;
+}
