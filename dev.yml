@@ -9,15 +9,11 @@ services:
         depends_on:
             - db
         volumes:
-            - './app:/opt/twitclone/dev/'
+            - './app/src:/opt/twitclone/dev/'
     db:
         extends:
             file: 'basic.yml'
             service: db
-        container_name: 'twitclone-dev-db'
-        environment:
-            MYSQL_DATABASE: twitclonedb
-            MYSQL_ROOT_PASSWORD: secret
         volumes:
             - 'twit-dev-db:/var/lib/mysql'
     dbadmin:
@@ -26,7 +22,7 @@ services:
         depends_on:
             - db
         environment:
-            PMA_HOST: 'twitclone-dev-db'
+            PMA_HOST: 'twitclone-db'
         ports:
             - "80:80"
 volumes:

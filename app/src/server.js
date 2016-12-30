@@ -22,7 +22,7 @@ app.use(cookieParser()); // middleware
 // docker compose files
 // how can we make this dynamic?
 var connection = mysql.createConnection({
-    host: 'twitclone-dev-db',
+    host: 'twitclone-db',
     user: 'root',
     password: 'secret',
     database: 'twitclonedb'
@@ -44,7 +44,7 @@ var conn_db = function() {
     });
 };
 
-setTimeout(conn_db, 40000);
+setTimeout(conn_db, 80000); // 80 seconds
 
 
 // apps have routes

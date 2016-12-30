@@ -12,7 +12,7 @@ WORKDIR $APP
 COPY package.json $APP
 RUN npm install && npm install --global nodemon
 
-COPY app/ $APP
+COPY src/ $APP
 
 
 CMD ["node", "server.js"]
